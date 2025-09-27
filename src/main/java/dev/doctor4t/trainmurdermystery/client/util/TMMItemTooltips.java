@@ -1,5 +1,6 @@
 package dev.doctor4t.trainmurdermystery.client.util;
 
+import dev.doctor4t.ratatouille.util.TextUtils;
 import dev.doctor4t.trainmurdermystery.index.TMMItems;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.client.MinecraftClient;
@@ -8,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TMMItemTooltips {
@@ -17,26 +19,22 @@ public class TMMItemTooltips {
 
     public static void addTooltips() {
         ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, tooltipList) -> {
-            addTooltipsForItem(TMMItems.KNIFE, 3, itemStack, tooltipList);
+            addTooltipsForItem(TMMItems.KNIFE, itemStack, tooltipList);
+            addTooltipsForItem(TMMItems.LOCKPICK, itemStack, tooltipList);
+            addTooltipsForItem(TMMItems.REVOLVER, itemStack, tooltipList);
+            addTooltipsForItem(TMMItems.BODY_BAG, itemStack, tooltipList);
+            addTooltipsForItem(TMMItems.BLACKOUT, itemStack, tooltipList);
+            addTooltipsForItem(TMMItems.PSYCHO_MODE, itemStack, tooltipList);
             addCooldownText(TMMItems.KNIFE, tooltipList, itemStack);
-
-            addTooltipsForItem(TMMItems.LOCKPICK, 2, itemStack, tooltipList);
             addCooldownText(TMMItems.LOCKPICK, tooltipList, itemStack);
-
-            addTooltipsForItem(TMMItems.REVOLVER, 2, itemStack, tooltipList);
-
-            addTooltipsForItem(TMMItems.BODY_BAG, 1, itemStack, tooltipList);
-
-            addTooltipsForItem(TMMItems.BLACKOUT, 3, itemStack, tooltipList);
-            addTooltipsForItem(TMMItems.PSYCHO_MODE, 3, itemStack, tooltipList);
         });
     }
 
-    private static void addTooltipsForItem(Item item, int tooltipLineCount, @NotNull ItemStack itemStack, List<Text> tooltipList) {
+    private static void addTooltipsForItem(Item item, @NotNull ItemStack itemStack, List<Text> tooltipList) {
         if (!itemStack.isOf(item)) return;
-        for (var i = 1; i <= tooltipLineCount; i++) {
-            tooltipList.add(Text.translatable("tip." + item.getTranslationKey().substring(24) + ".tooltip" + i).withColor(REGULAR_TOOLTIP_COLOR));
-        }
+
+        List<Text> withLineBreaks = TextUtils.getWithLineBreaks(Text.translatable("tip." + item.getTranslationKey().substring(24) + ".tooltip").withColor(REGULAR_TOOLTIP_COLOR));
+        tooltipList.addAll(withLineBreaks);
     }
 
     private static void addCooldownText(Item item, List<Text> tooltipList, @NotNull ItemStack itemStack) {

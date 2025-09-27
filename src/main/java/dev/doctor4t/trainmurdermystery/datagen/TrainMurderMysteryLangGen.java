@@ -61,20 +61,12 @@ public class TrainMurderMysteryLangGen extends FabricLanguageProvider {
         builder.add("tip.door.jammed", "This door is jammed and cannot be opened at the moment!");
 
         builder.add("tip.cooldown", "On cooldown: %s");
-        builder.add("tip.knife.tooltip1", "Right-click to use, hold for a second and get close to your victim!");
-        builder.add("tip.knife.tooltip2", "After a kill, cannot be used for 3 minutes");
-        builder.add("tip.knife.tooltip3", "Attack to knock back / push a player (no cooldown)");
-        builder.add("tip.lockpick.tooltip1", "Use on any locked door to open it (no cooldown)");
-        builder.add("tip.lockpick.tooltip2", "Sneak-use on a door to jam it for 1 minute (disables the lockpick for 5 minutes)");
-        builder.add("tip.revolver.tooltip1", "Right-click to use, point and shoot");
-        builder.add("tip.revolver.tooltip2", "Drops if you kill an innocent");
-        builder.add("tip.body_bag.tooltip1", "Use on a dead body to bag it up and remove it");
-        builder.add("tip.blackout.tooltip1", "Trigger a blackout");
-        builder.add("tip.blackout.tooltip2", "Activated instantly on purchase");
-        builder.add("tip.blackout.tooltip3", "More placeholder text");
-        builder.add("tip.disguise.tooltip1", "Disguise yourself for a bit");
-        builder.add("tip.disguise.tooltip2", "Activated instantly on purchase");
-        builder.add("tip.disguise.tooltip3", "More placeholder text");
+        builder.add("tip.knife.tooltip", "Right-click to use, hold for a second and get close to your victim!\nAfter a kill, cannot be used for 3 minutes\nAttack to knock back / push a player (no cooldown)");
+        builder.add("tip.lockpick.tooltip", "Use on any locked door to open it (no cooldown)\nSneak-use on a door to jam it for 1 minute (disables the lockpick for 5 minutes)");
+        builder.add("tip.revolver.tooltip", "Right-click to use, point and shoot\nDrops if you kill an innocent");
+        builder.add("tip.body_bag.tooltip", "Use on a dead body to bag it up and remove it");
+        builder.add("tip.blackout.tooltip", "Trigger a blackout\nActivated instantly on purchase");
+        builder.add("tip.disguise.tooltip", "Disguise yourself for a bit\nActivated instantly on purchase");
 
         builder.add("game.win.hitmen", "The hitmen reached their kill count, they win!");
         builder.add("game.win.passengers", "All hitmen were eliminated: the passengers win!");
