@@ -149,10 +149,3 @@ public class TMM implements ModInitializer {
         return entitlements.map(value -> value.keys().stream().anyMatch(identifier -> identifier.equals(COMMAND_ACCESS))).orElse(false);
     }
 }
-
-
-// POST RECORDING
-// TODO: Watermark?
-// TODO: Sticky note price cheaper
-// TODO: note reset button on the screen to remove all typed text
-// TODO: Have knife be red on full charge only

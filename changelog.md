@@ -1,4 +1,9 @@
 ------------------------------------------------------
+The Last Voyage of the Harpy Express 1.0.3 - 1.21.1
+------------------------------------------------------
+- Updated Ratatouille
+
+------------------------------------------------------
 The Last Voyage of the Harpy Express 1.0.2 - 1.21.1
 ------------------------------------------------------
 - Made eating and drinking sounds quieter
